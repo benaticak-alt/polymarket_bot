@@ -1,0 +1,52 @@
+# ── Secrets ─────────────────────────────────────────────
+# Ignore every .env variant, but keep the template tracked.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# ── Live trading state & P&L (personal financial data) ──
+bankroll.json
+shadow_bankroll.json
+signal_usage.json
+bot.lock
+*.csv
+
+# ── Logs ────────────────────────────────────────────────
+*.log
+*.log.[0-9]
+logs/
+
+# ── Archives & local backups ────────────────────────────
+corrupt_csv_archive_*/
+data_archive_*/
+dash_backup_*/
+
+# ── Model artifacts (regenerate by retraining) ──────────
+model/weights/
+*.pkl
+*.joblib
+
+# ── Stray file from a path-as-filename bug ──────────────
+C?Usersbenat*
+*tmp_poly.json
+
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ── Node (Marketmind sub-project) ───────────────────────
+node_modules/
+
+.DS_Store
+
+# ── Nested separate project ─────────────────────────────
+# Marketmind is a standalone SaaS (Stripe, subscriptions, landing pages) that
+# happens to live in this folder. It is not part of the trading system and
+# dilutes this repo. Give it its own repo — and audit the Google API keys in
+# its public/*.html before publishing it anywhere.
+# (data/marketmind_api.py, the client this bot uses, IS still tracked.)
+Marketmind/
