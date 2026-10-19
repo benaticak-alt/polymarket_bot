@@ -10,6 +10,9 @@
 bankroll.json
 shadow_bankroll.json
 signal_usage.json
+portfolio_state.json
+portfolio_targets.json
+bankroll_backup_*.json
 bot.lock
 *.csv
 

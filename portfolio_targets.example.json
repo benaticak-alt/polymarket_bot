@@ -1,0 +1,14 @@
+{
+  "_note": "ILLUSTRATIVE PLACEHOLDERS, not a recommendation. Copy to portfolio_targets.json (gitignored) and set your own assets and weights. Weights must sum to <= 1; the remainder is held as cash. Asset names must match the column headers in your price CSV.",
+  "targets": {
+    "EQUITY_INDEX": 0.60,
+    "BOND_INDEX": 0.30,
+    "GOLD": 0.05
+  },
+  "abs_band": 0.05,
+  "rel_band": 0.25,
+  "min_trade_usd": 25.0,
+  "cost_bps": 5.0,
+  "slippage_bps": 5.0,
+  "allow_sells": true
+}

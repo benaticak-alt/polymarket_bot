@@ -346,6 +346,18 @@ LIVE_TEST_ASSET       = os.getenv("LIVE_TEST_ASSET", "btc").lower()      # only 
 LIVE_TEST_INTERVAL    = "15m"                                            # 15m only (the engine)
 LIVE_TEST_STATE_PATH  = BASE_DIR / "live_test_status.json"               # bot→dashboard status file
 
+# ── Core portfolio (portfolio/) ────────────────────────────────────────────────
+# Rules-based core holdings that the trading bot (the "satellite") sweeps excess
+# bankroll into. Paper-only: there is no broker connection; see PORTFOLIO_PLAN.md.
+# Targets fall back to the tracked example file if your own copy doesn't exist.
+PORTFOLIO_TARGETS_PATH  = BASE_DIR / "portfolio_targets.json"
+PORTFOLIO_EXAMPLE_PATH  = BASE_DIR / "portfolio_targets.example.json"
+PORTFOLIO_STATE_PATH    = BASE_DIR / "portfolio_state.json"
+SATELLITE_CAP_USD       = float(os.getenv("SATELLITE_CAP_USD", "1000"))
+                               # bot bankroll above this is eligible to sweep to core
+SATELLITE_SWEEP_MIN_USD = float(os.getenv("SATELLITE_SWEEP_MIN_USD", "50"))
+                               # don't bother sweeping less than this
+
 # ── System ─────────────────────────────────────────────────────────────────────
 DRY_RUN   = os.getenv("DRY_RUN", "true").lower() == "true"
 LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
